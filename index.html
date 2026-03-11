@@ -6,34 +6,45 @@
 <title>Cobalt Canyon Group</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:'Inter',sans-serif;background:#0a0d14;color:#e6e6e6}
+body{margin:0;font-family:'Inter',sans-serif;background:#0a0d14;color:#e6e6e6;scroll-behavior:smooth}
 
-header{background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;padding:140px 20px;text-align:center;position:relative}
-header::before{content:'';position:absolute;top:0;left:0;width:100%;height:100%;background:rgba(5,8,15,.75)}
-header *{position:relative}
+nav{position:fixed;top:0;width:100%;background:#070a11cc;backdrop-filter:blur(6px);padding:18px 40px;display:flex;justify-content:space-between;align-items:center;z-index:999}
+nav .logo{font-family:'Playfair Display',serif;color:#d4af37;font-size:22px}
+nav a{color:#e6e6e6;margin-left:25px;text-decoration:none;font-size:14px}
 
-h1{font-family:'Playfair Display',serif;font-size:58px;letter-spacing:2px;margin:0;color:#d4af37}
+header{background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;padding:20px}
+header::before{content:'';position:absolute;width:100%;height:100%;background:rgba(5,8,15,.8)}
+header .hero{position:relative}
+
+h1{font-family:'Playfair Display',serif;font-size:64px;color:#d4af37;margin:0}
 .tag{margin-top:20px;font-size:20px;opacity:.9}
+.hero button{margin-top:30px;padding:16px 38px;border:none;background:#d4af37;color:#0a0d14;font-weight:600;border-radius:6px;cursor:pointer}
 
-section{max-width:1100px;margin:auto;padding:90px 20px}
+section{max-width:1100px;margin:auto;padding:100px 20px}
 
 h2{font-family:'Playfair Display',serif;font-size:36px;margin-bottom:40px;color:#d4af37;text-align:center}
 
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
-
 .card{background:#111726;padding:35px;border-radius:12px;border:1px solid rgba(212,175,55,.2);transition:.3s}
-.card:hover{transform:translateY(-6px);border-color:#d4af37;box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.card h3{font-family:'Playfair Display',serif;margin-top:0;color:#fff}
+.card:hover{transform:translateY(-8px);border-color:#d4af37;box-shadow:0 25px 50px rgba(0,0,0,.45)}
+.card h3{font-family:'Playfair Display',serif;color:#fff;margin-top:0}
 
 .packages{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px}
-.package{background:#0f1525;padding:40px;border-radius:12px;border:1px solid rgba(212,175,55,.25);text-align:center}
-.package h3{font-family:'Playfair Display',serif;color:#fff}
-.price{font-size:38px;color:#d4af37;margin:15px 0}
+.package{background:#0f1525;padding:40px;border-radius:12px;border:1px solid rgba(212,175,55,.25);text-align:center;transition:.3s}
+.package:hover{transform:translateY(-6px)}
+.price{font-size:40px;color:#d4af37;margin:15px 0}
+
+.authority{text-align:center;max-width:800px;margin:auto;line-height:1.8;font-size:18px}
+
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px}
+.testimonial{background:#111726;padding:30px;border-radius:12px;border:1px solid rgba(212,175,55,.2)}
+
+.faq{max-width:800px;margin:auto}
+.faq-item{margin-bottom:20px}
+.faq-item h4{color:#d4af37;margin-bottom:5px}
 
 .cta{background:linear-gradient(180deg,#0f1525,#0a0d14);text-align:center;padding:110px 20px}
 .cta a{display:inline-block;margin-top:30px;padding:18px 42px;background:#d4af37;color:#0a0d14;text-decoration:none;font-weight:600;border-radius:6px}
-
-.authority{text-align:center;max-width:800px;margin:auto;line-height:1.8;font-size:18px}
 
 form{max-width:600px;margin:40px auto;display:flex;flex-direction:column;gap:15px}
 input,textarea{padding:14px;border-radius:6px;border:none;font-size:15px}
@@ -42,38 +53,55 @@ button{padding:16px;background:#d4af37;border:none;border-radius:6px;font-weight
 .contact{text-align:center;font-size:18px;line-height:1.8}
 
 footer{background:#070a11;text-align:center;padding:40px 20px;font-size:14px;opacity:.7}
+
+.spacer{height:70px}
 </style>
 </head>
 <body>
 
+<nav>
+<div class="logo">Cobalt Canyon Group</div>
+<div>
+<a href="#services">Services</a>
+<a href="#packages">Packages</a>
+<a href="#testimonials">Clients</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
 <header>
+<div class="hero">
 <h1>Cobalt Canyon Group</h1>
 <p class="tag">Elite Business Consulting • Corporate Formation • Strategic Advisory</p>
+<button onclick="document.getElementById('contact').scrollIntoView()">Start Consultation</button>
+</div>
 </header>
 
-<section>
+<div class="spacer"></div>
+
+<section id="services">
 <h2>Elite Business Services</h2>
 <div class="cards">
 
 <div class="card">
 <h3>Business Formation</h3>
-<p>Professional LLC and corporate formation services designed for entrepreneurs who demand precision, efficiency, and discretion.</p>
+<p>LLC and corporate formation services designed for entrepreneurs who want strong business foundations and professional compliance.</p>
 </div>
 
 <div class="card">
 <h3>Document Preparation</h3>
-<p>Accurate preparation and filing of critical business documentation including amendments, compliance filings, and registrations.</p>
+<p>Preparation and filing of amendments, registrations, and corporate compliance documentation.</p>
 </div>
 
 <div class="card">
 <h3>Strategic Consulting</h3>
-<p>Guidance for founders and executives seeking strong corporate structure, compliance, and scalable business foundations.</p>
+<p>Business structure planning and startup consulting for founders building scalable ventures.</p>
 </div>
 
 </div>
 </section>
 
-<section>
+<section id="packages">
 <h2>Startup Packages</h2>
 <div class="packages">
 
@@ -86,44 +114,85 @@ footer{background:#070a11;text-align:center;padding:40px 20px;font-size:14px;opa
 <div class="package">
 <h3>Professional Setup</h3>
 <div class="price">$599</div>
-<p>Business formation<br>EIN registration guidance<br>Compliance filing support</p>
+<p>Business formation<br>EIN guidance<br>Compliance assistance</p>
 </div>
 
 <div class="package">
 <h3>Executive Launch</h3>
 <div class="price">$999</div>
-<p>Complete formation service<br>Corporate structuring guidance<br>Priority consulting session</p>
+<p>Complete formation<br>Corporate structuring guidance<br>Priority consulting</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Trusted Business Advisors</h2>
+<div class="authority">
+<p>Cobalt Canyon Group provides professional consulting and document preparation services to entrepreneurs launching and structuring new companies.</p>
+<p>Our focus is helping clients build compliant, organized, and scalable business structures.</p>
+</div>
+</section>
+
+<section id="testimonials">
+<h2>Client Experiences</h2>
+<div class="testimonials">
+
+<div class="testimonial">
+<p>"Cobalt Canyon Group made our LLC formation simple and professional. Highly recommended."</p>
+<p><strong>— Startup Founder</strong></p>
+</div>
+
+<div class="testimonial">
+<p>"Excellent guidance on structuring our business properly from the beginning."</p>
+<p><strong>— Small Business Owner</strong></p>
+</div>
+
+<div class="testimonial">
+<p>"Professional, responsive, and knowledgeable consulting service."</p>
+<p><strong>— Entrepreneur</strong></p>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+
+<div class="faq-item">
+<h4>Do you provide legal advice?</h4>
+<p>No. We provide document preparation and consulting services but are not attorneys.</p>
+</div>
+
+<div class="faq-item">
+<h4>How long does business formation take?</h4>
+<p>Most formations are submitted within 24 hours after receiving client information.</p>
+</div>
+
+<div class="faq-item">
+<h4>Do you help with compliance filings?</h4>
+<p>Yes. We assist clients with amendments, updates, and business documentation.</p>
 </div>
 
 </div>
 </section>
 
 <section class="cta">
-<h2>Start Building Your Company Today</h2>
-<p>Work with professionals focused on creating strong corporate foundations.</p>
+<h2>Build Your Business With Confidence</h2>
+<p>Professional consulting and document services for entrepreneurs ready to launch.</p>
 <a href="mailto:info@cobaltcanyongroup.com">Schedule Consultation</a>
 </section>
 
-<section>
-<h2>Trusted Business Advisors</h2>
-<div class="authority">
-<p>Cobalt Canyon Group provides structured business consulting and document preparation services for entrepreneurs, startups, and small business owners seeking professional business foundations.</p>
-<p>Our mission is simple: help clients launch, structure, and maintain businesses with clarity, compliance, and confidence.</p>
-</div>
-</section>
-
-<section>
-<h2>Request a Consultation</h2>
+<section id="contact">
+<h2>Request Consultation</h2>
 <form action="mailto:info@cobaltcanyongroup.com" method="post" enctype="text/plain">
 <input type="text" placeholder="Full Name" required>
 <input type="email" placeholder="Email Address" required>
 <textarea rows="5" placeholder="Tell us about your business goals"></textarea>
 <button type="submit">Submit Inquiry</button>
 </form>
-</section>
 
-<section>
-<h2>Contact</h2>
 <div class="contact">
 <p>Email: info@cobaltcanyongroup.com</p>
 <p>Phone: 1-888-212-9394</p>
@@ -137,3 +206,4 @@ footer{background:#070a11;text-align:center;padding:40px 20px;font-size:14px;opa
 
 </body>
 </html>
+
